@@ -1,4 +1,4 @@
-## Making Sence Accademy
+## Making Sense Accademy
 
 **Parte 1**
 
