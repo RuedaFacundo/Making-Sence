@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Making_Sence
+namespace Making_Sense
 {
     class Program
     {

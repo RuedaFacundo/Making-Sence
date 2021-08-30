@@ -1,4 +1,4 @@
-﻿namespace Making_Sence
+﻿namespace Making_Sense
 {
     public class Vehicle
     {
