@@ -3,7 +3,7 @@
     public class Car
     {
         public int CarID { get; set; }
-        public int Model { get; set; }
+        public string Model { get; set; }
         public byte Doors { get; set; }
         public string Color { get; set; }
         public Type Type { get; set; }
