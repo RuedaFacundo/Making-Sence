@@ -6,20 +6,26 @@ namespace Making_Sense
     {
         static void Main(string[] args)
         {
-            Car Fiat = new Car("Palio", 5, "red", Type.MANUAL);
-            Car Ford = new Car("Fiesta", 5, "black", Type.AUTOMATIC);
-            Car Chevrolet = new Car("Corsa", 3, "blue", Type.MANUAL);
-            Car Peugeot = new Car("308", 5, "red", Type.AUTOMATIC);
-            Car Renault = new Car("Sandero", 5, "green", Type.AUTOMATIC);
-            Car Volkswagen = new Car("Fox", 3, "grey", Type.MANUAL);
-
-            Console.WriteLine(Fiat.ToString());
-            Console.WriteLine(Ford.ToString());
-            Console.WriteLine(Chevrolet.ToString());
-            Console.WriteLine(Peugeot.ToString());
-            Console.WriteLine(Renault.ToString());
-            Console.WriteLine(Volkswagen.ToString());
-
+            Car Palio = new Car
+            {
+                CarID = 0,
+                Brand = Brand.FIAT,
+                Color = "green",
+                Doors = 5,
+                Model = "Palio",
+                Type = Type.MANUAL
+            };
+            Car Fox = new Car
+            {
+                CarID = 1,
+                Brand = Brand.VOLKSWAGEN,
+                Color = "grey",
+                Doors = 3,
+                Model = "Fox",
+                Type = Type.MANUAL
+            };
+            Console.WriteLine(Palio.ToString());
+            Console.WriteLine(Fox.ToString());
         }
     }
 }
