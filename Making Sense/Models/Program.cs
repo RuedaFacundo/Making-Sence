@@ -6,24 +6,25 @@ namespace Making_Sense
     {
         static void Main(string[] args)
         {
-            Car Palio = new Car
+            CarCRUD Cars = new CarCRUD();
+            Car Palio = Cars.Create(new Car
             {
                 CarID = 0,
                 Brand = Brand.FIAT,
-                Color = "green",
-                Doors = 5,
                 Model = "Palio",
+                Color = "Green",
+                Doors = 5,
                 Type = Type.MANUAL
-            };
-            Car Fox = new Car
+            });
+            Car Fox = Cars.Create( new Car
             {
                 CarID = 1,
                 Brand = Brand.VOLKSWAGEN,
-                Color = "grey",
-                Doors = 3,
                 Model = "Fox",
+                Color = "Grey",
+                Doors = 3,
                 Type = Type.MANUAL
-            };
+            });
             Console.WriteLine(Palio.ToString());
             Console.WriteLine(Fox.ToString());
         }
