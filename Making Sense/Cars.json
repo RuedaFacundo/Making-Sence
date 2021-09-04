@@ -1,0 +1,18 @@
+[
+  {
+    "CarID": 0,
+    "Model": "Palio",
+    "Doors": 5,
+    "Color": "green",
+    "Type": 0,
+    "Brand": 0
+  },
+  {
+    "CarID": 1,
+    "Model": "Fox",
+    "Doors": 3,
+    "Color": "grey",
+    "Type": 0,
+    "Brand": 5
+  }
+]
