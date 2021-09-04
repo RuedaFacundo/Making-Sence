@@ -1,25 +1,16 @@
 ﻿namespace Making_Sense
 {
-    public class Car : Vehicle
+    public class Car
     {
-        private int carID = 0;
-        public string model;
-        public byte doors;
-        public string color;
-        public Type type;
-
-        public Car(string model, byte doors, string color, Type type)
-        {
-            this.model = model;
-            this.doors = doors;
-            this.color = color;
-            this.type = type;
-            carID = FakeID++;
-        }
-
+        public int CarID { get; set; }
+        public int Model { get; set; }
+        public byte Doors { get; set; }
+        public string Color { get; set; }
+        public Type Type { get; set; }
+        public Brand Brand { get; set; }
         public override string ToString()
         {
-            return "Car ID:" + carID + " - Model: " + this.model + " - Doors: " + this.doors + " - Color: " + this.color + " - Type: " + this.type + "\n";
+            return "Car ID:" + CarID + " - Model: " + this.Model + " - Doors: " + this.Doors + " - Color: " + this.Color + " - Type: " + this.Type + " - Brand: " + this.Brand + "\n";
         }
 
     }
