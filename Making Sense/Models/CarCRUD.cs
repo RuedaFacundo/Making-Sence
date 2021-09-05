@@ -19,5 +19,27 @@ namespace Making_Sense
             string carsJson = JsonConvert.SerializeObject(Cars.ToArray(), Formatting.Indented);
             File.WriteAllText(_path, carsJson);
         }
+        public Car Get(int id)
+        {
+            List<Car> CarList = JsonConvert.DeserializeObject<List<Car>>(Read());
+            Car aux = new Car();
+            foreach (var car in CarList)
+            {
+                if(car.CarID == id)
+                {
+                    aux = car;
+                }
+            }
+            return aux;
+        }
+        public string Read()
+        {
+            string carsJsonFromFile;
+            using (var reader = new StreamReader(_path))
+            {
+                carsJsonFromFile = reader.ReadToEnd();
+            }
+            return carsJsonFromFile;
+        }
     }
 }

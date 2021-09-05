@@ -27,6 +27,7 @@ namespace Making_Sense
             });
             Console.WriteLine(Palio.ToString());
             Console.WriteLine(Fox.ToString());
+            Console.WriteLine(Cars.Get(0).ToString());
         }
     }
 }
