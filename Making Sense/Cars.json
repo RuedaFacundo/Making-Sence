@@ -8,11 +8,11 @@
     "Type": 0
   },
   {
-    "CarID": 1,
-    "Brand": 5,
-    "Model": "Fox",
-    "Color": "Grey",
-    "Doors": 3,
-    "Type": 0
+    "CarID": 2,
+    "Brand": 4,
+    "Model": "Megane",
+    "Color": "Black",
+    "Doors": 5,
+    "Type": 1
   }
 ]
