@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -21,9 +22,9 @@ namespace Making_Sense
         }
         public Car Get(int id)
         {
-            List<Car> CarList = JsonConvert.DeserializeObject<List<Car>>(Read());
+            List<Car> Cars = JsonConvert.DeserializeObject<List<Car>>(Read());
             Car aux = new Car();
-            foreach (var car in CarList)
+            foreach (var car in Cars)
             {
                 if(car.CarID == id)
                 {
@@ -40,6 +41,26 @@ namespace Making_Sense
                 carsJsonFromFile = reader.ReadToEnd();
             }
             return carsJsonFromFile;
+        }
+        public Car Update (Car car)
+        {
+            Car aux = Get(car.CarID);
+            Cars.RemoveAt(aux.CarID);
+            Cars.Add(car);
+            Save();
+            return car;
+        }
+        public void Delete (int id)
+        {
+            int index = Cars.FindIndex(i => i.CarID == id);
+            if (index >= 0)
+            {
+                Cars.RemoveAt(index);
+                Save();
+            } else
+            {
+                Console.WriteLine("El auto a eliminar no fue encontrado");
+            }          
         }
     }
 }
