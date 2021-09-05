@@ -1,18 +1,18 @@
 [
   {
     "CarID": 0,
+    "Brand": 0,
     "Model": "Palio",
+    "Color": "Green",
     "Doors": 5,
-    "Color": "green",
-    "Type": 0,
-    "Brand": 0
+    "Type": 0
   },
   {
     "CarID": 1,
+    "Brand": 5,
     "Model": "Fox",
+    "Color": "Grey",
     "Doors": 3,
-    "Color": "grey",
-    "Type": 0,
-    "Brand": 5
+    "Type": 0
   }
 ]
