@@ -15,7 +15,7 @@ namespace Making_Sense
             Save();
             return car;
         }
-        public void Save()
+        private void Save()
         {
             string carsJson = JsonConvert.SerializeObject(Cars.ToArray(), Formatting.Indented);
             File.WriteAllText(_path, carsJson);
@@ -33,7 +33,7 @@ namespace Making_Sense
             }
             return aux;
         }
-        public string Read()
+        private string Read()
         {
             string carsJsonFromFile;
             using (var reader = new StreamReader(_path))
