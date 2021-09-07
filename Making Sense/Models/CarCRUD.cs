@@ -1,4 +1,4 @@
-﻿using Making_Sense.Interface.IMethods;
+﻿using Making_Sense.Interface.ICarCrud;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.IO;
 
 namespace Making_Sense
 {
-    public class CarCRUD : IMethods
+    public class CarCRUD : ICarCrud
     {
         private static string _path = @"C:\Users\Acer\source\repos\Making Sense\Making Sense\Cars.json";
         public List<Car> Cars = new List<Car>();

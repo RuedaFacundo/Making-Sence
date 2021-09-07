@@ -1,6 +1,6 @@
-﻿namespace Making_Sense.Interface.IMethods
+﻿namespace Making_Sense.Interface.ICarCrud
 {
-    public interface IMethods
+    public interface ICarCrud
     {
         Car Create(Car car);
         Car Get(int id);
