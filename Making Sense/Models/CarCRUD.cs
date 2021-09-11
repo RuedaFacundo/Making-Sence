@@ -2,13 +2,14 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 
 namespace Making_Sense
 {
     public class CarCRUD : ICarCrud
     {
-        private static string _path = @"C:\Users\Acer\source\repos\Making Sense\Making Sense\Cars.json";
+        private string JsonFile = ConfigurationManager.AppSettings["pathFileCar"];
         public List<Car> Cars = new List<Car>();
         public Car Create(Car car)
         {
@@ -19,7 +20,7 @@ namespace Making_Sense
         private void Save()
         {
             string carsJson = JsonConvert.SerializeObject(Cars.ToArray(), Formatting.Indented);
-            File.WriteAllText(_path, carsJson);
+            File.WriteAllText(JsonFile, carsJson);
         }
         public Car Get(int id)
         {
@@ -37,7 +38,7 @@ namespace Making_Sense
         private string Read()
         {
             string carsJsonFromFile;
-            using (var reader = new StreamReader(_path))
+            using (var reader = new StreamReader(JsonFile))
             {
                 carsJsonFromFile = reader.ReadToEnd();
             }
