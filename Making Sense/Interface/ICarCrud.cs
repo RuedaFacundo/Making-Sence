@@ -1,4 +1,6 @@
-﻿namespace Making_Sense.Interface.ICarCrud
+﻿using Making_Sense.Models;
+
+namespace Making_Sense.Interface.ICarCrud
 {
     public interface ICarCrud
     {

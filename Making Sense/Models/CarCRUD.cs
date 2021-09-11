@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 
-namespace Making_Sense
+namespace Making_Sense.Models
 {
     public class CarCRUD : ICarCrud
     {
