@@ -52,7 +52,7 @@ namespace Making_Sense.Models
             Console.WriteLine("El auto actualizado: ");
             Console.WriteLine(Cars.Update(Corsa).ToString());
             Cars.Delete(1);
-            Customer cliente = new Customer
+            var cliente = new Customer
             {
                 DNI = 36617481,
                 Name = "Facundo",
