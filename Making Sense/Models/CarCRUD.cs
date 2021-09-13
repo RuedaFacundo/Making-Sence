@@ -9,7 +9,7 @@ namespace Making_Sense.Models
 {
     public class CarCRUD : ICarCrud
     {
-        private string JsonFile = ConfigurationManager.AppSettings["pathFileCar"];
+        private readonly string JsonFile = ConfigurationManager.AppSettings["pathFileCar"];
         public List<Car> Cars = new List<Car>();
         public Car Create(Car car)
         {
