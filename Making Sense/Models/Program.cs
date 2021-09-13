@@ -65,7 +65,7 @@ namespace Making_Sense.Models
                 LastModificationDate = "12/09/2021"
             };
             Console.WriteLine(cliente.ToString());
-            Rental Rental = new Rental
+            var Rental = new Rental
             {
                 Duration = "7 days",
                 car = Corsa,
