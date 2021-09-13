@@ -1,6 +1,7 @@
-﻿using System;
+﻿using Making_Sence.Models;
+using System;
 
-namespace Making_Sense
+namespace Making_Sense.Models
 {
     class Program
     {
@@ -51,7 +52,27 @@ namespace Making_Sense
             Console.WriteLine("El auto actualizado: ");
             Console.WriteLine(Cars.Update(Corsa).ToString());
             Cars.Delete(1);
-
+            var cliente = new Customer
+            {
+                DNI = 36617481,
+                Name = "Facundo",
+                Surname = "Rueda",
+                Telephone = "2235378667",
+                Adress = "Friuli 797",
+                City =  "Mar del Plata",
+                State = "Buenos Aires",
+                ZipCode = 7600,
+                LastModificationDate = "12/09/2021"
+            };
+            Console.WriteLine(cliente.ToString());
+            var Rental = new Rental
+            {
+                Duration = "7 days",
+                car = Corsa,
+                Client = cliente,
+                DateReturn = "15/10/2021"
+            };
+            Console.WriteLine(Rental.ToString());
         }
     }
 }
