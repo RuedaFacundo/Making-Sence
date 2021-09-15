@@ -7,7 +7,7 @@ using System.IO;
 
 namespace Making_Sense.Models
 {
-    public class CarCRUD : ICarCrud
+    public class CarCRUD : ICRUD<Car>
     {
         private readonly string JsonFile = ConfigurationManager.AppSettings["pathFileCar"];
         public List<Car> Cars = new List<Car>();
