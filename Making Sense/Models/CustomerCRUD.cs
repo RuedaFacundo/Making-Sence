@@ -25,7 +25,7 @@ namespace Making_Sence.Models
         public Customer Get(int id)
         {
             List<Customer> customers = JsonConvert.DeserializeObject<List<Customer>>(Read());
-            var aux = new Customer();
+            var customer = new Customer();
             foreach (var client in customers)
             {
                 if (client.customerID == id)
