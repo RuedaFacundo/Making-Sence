@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 
 namespace Making_Sense.Models
 {
@@ -25,15 +26,7 @@ namespace Making_Sense.Models
         public Car Get(int id)
         {
             List<Car> Cars = JsonConvert.DeserializeObject<List<Car>>(Read());
-            Car aux = new Car();
-            foreach (var car in Cars)
-            {
-                if(car.CarID == id)
-                {
-                    aux = car;
-                }
-            }
-            return aux;
+            return Cars.Single(car => car.CarID == id);
         }
         private string Read()
         {
