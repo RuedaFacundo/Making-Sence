@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
+using System.Linq;
 
 namespace Making_Sence.Models
 {
@@ -25,15 +26,7 @@ namespace Making_Sence.Models
         public Customer Get(int id)
         {
             List<Customer> customers = JsonConvert.DeserializeObject<List<Customer>>(Read());
-            var customer = new Customer();
-            foreach (var customer in customers)
-            {
-                if (client.customerID == id)
-                {
-                    aux = client;
-                }
-            }
-            return aux;
+            return customers.Single(client => client.customerID == id);
         }
         private string Read()
         {

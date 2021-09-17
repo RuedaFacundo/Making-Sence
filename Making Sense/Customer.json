@@ -1,14 +1,14 @@
 [
   {
     "customerID": 0,
-    "DNI": 36844955,
-    "Name": "Hernan",
-    "Surname": "Pino",
-    "Telephone": "2235389556",
-    "Adress": "Gascon 1060",
+    "DNI": 36617481,
+    "Name": "Facundo",
+    "Surname": "Rueda",
+    "Telephone": "2235378667",
+    "Adress": "Friuli 797",
     "City": "Mar del Plata",
     "State": "Buenos Aires",
     "ZipCode": 7600,
-    "LastModificationDate": "15/09/2021"
+    "LastModificationDate": "12/09/2021"
   }
 ]
