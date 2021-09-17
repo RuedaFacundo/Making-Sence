@@ -52,7 +52,8 @@ namespace Making_Sense.Models
             Console.WriteLine("El auto actualizado: ");
             Console.WriteLine(Cars.Update(Corsa).ToString());
             Cars.Delete(1);
-            var cliente = new Customer
+            CustomerCRUD customers = new CustomerCRUD();
+            var facundo = customers.Create(new Customer
             {
                 DNI = 36617481,
                 Name = "Facundo",
@@ -63,13 +64,26 @@ namespace Making_Sense.Models
                 State = "Buenos Aires",
                 ZipCode = 7600,
                 LastModificationDate = "12/09/2021"
+            });
+            Console.WriteLine(customers.Get(0).ToString());
+            var hernan = new Customer
+            {
+                DNI = 36844955,
+                Name = "Hernan",
+                Surname = "Pino",
+                Telephone = "2235389556",
+                Adress = "Gascon 1060",
+                City = "Mar del Plata",
+                State = "Buenos Aires",
+                ZipCode = 7600,
+                LastModificationDate = "15/09/2021"
             };
-            Console.WriteLine(cliente.ToString());
+            Console.WriteLine(customers.Update(hernan).ToString());
             var Rental = new Rental
             {
                 Duration = "7 days",
                 car = Corsa,
-                Client = cliente,
+                Client = facundo,
                 DateReturn = "15/10/2021"
             };
             Console.WriteLine(Rental.ToString());

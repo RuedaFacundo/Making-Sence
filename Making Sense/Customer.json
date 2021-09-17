@@ -1,0 +1,14 @@
+[
+  {
+    "customerID": 0,
+    "DNI": 36844955,
+    "Name": "Hernan",
+    "Surname": "Pino",
+    "Telephone": "2235389556",
+    "Adress": "Gascon 1060",
+    "City": "Mar del Plata",
+    "State": "Buenos Aires",
+    "ZipCode": 7600,
+    "LastModificationDate": "15/09/2021"
+  }
+]
