@@ -55,6 +55,7 @@ namespace Making_Sense.Models
             CustomerCRUD customers = new CustomerCRUD();
             var facundo = customers.Create(new Customer
             {
+                customerID = 0,
                 DNI = 36617481,
                 Name = "Facundo",
                 Surname = "Rueda",
@@ -65,9 +66,16 @@ namespace Making_Sense.Models
                 ZipCode = 7600,
                 LastModificationDate = "12/09/2021"
             });
-            Console.WriteLine(customers.Get(0).ToString());
+            try
+            {
+                Console.WriteLine(customers.Get(0).ToString());
+            } catch (Exception)
+            {
+                Console.WriteLine("El cliente no se encuentra, ingrese el ID correcto");
+            }
             var hernan = new Customer
             {
+                customerID = 1,
                 DNI = 36844955,
                 Name = "Hernan",
                 Surname = "Pino",
@@ -78,7 +86,14 @@ namespace Making_Sense.Models
                 ZipCode = 7600,
                 LastModificationDate = "15/09/2021"
             };
-            Console.WriteLine(customers.Update(hernan).ToString());
+            try
+            {
+                Console.WriteLine(customers.Update(hernan).ToString());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No se pudo actualizar el cliente correctamente");
+            }           
             var Rental = new Rental
             {
                 Duration = "7 days",
