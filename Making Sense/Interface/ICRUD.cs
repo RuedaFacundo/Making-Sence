@@ -1,4 +1,6 @@
-﻿namespace Making_Sense.Interface.ICarCrud
+﻿using System.Collections.Generic;
+
+namespace Making_Sense.Interface.ICarCrud
 {
     public interface ICRUD<T>
     {
@@ -6,5 +8,6 @@
         T Get(int id);
         T Update(T t);
         void Delete(int id);
+        IEnumerable<T> GetAll();
     }
 }

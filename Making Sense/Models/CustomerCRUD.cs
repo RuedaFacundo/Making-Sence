@@ -58,5 +58,9 @@ namespace Making_Sence.Models
                 Console.WriteLine("El cliente a eliminar no fue encontrado");
             }
         }
+        public IEnumerable<Customer> GetAll()
+        {
+            return customerList.ToList().OrderBy(customer => customer.DNI);
+        }
     }
 }
