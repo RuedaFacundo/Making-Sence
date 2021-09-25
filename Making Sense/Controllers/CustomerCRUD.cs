@@ -1,5 +1,5 @@
 ﻿using Making_Sence.Models;
-using Making_Sense.Interface.ICarCrud;
+using Making_Sense.Interface;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -15,6 +15,7 @@ namespace Making_Sence.Controllers
         public List<Customer> customerList = new List<Customer>();
         public Customer Create(Customer customer)
         {
+            customer.LastModificationDate = DateTime.Now;
             customerList.Add(customer);
             Save();
             return customer;
@@ -40,6 +41,7 @@ namespace Making_Sence.Controllers
         }
         public Customer Update(Customer customer)
         {
+            customer.LastModificationDate = DateTime.Now;
             Customer aux = Get(customer.customerID);
             customerList.RemoveAt(aux.customerID);
             customerList.Add(customer);
