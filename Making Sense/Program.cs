@@ -66,8 +66,7 @@ namespace Making_Sense
                 Adress = "Friuli 797",
                 City = "Mar del Plata",
                 State = "Buenos Aires",
-                ZipCode = 7600,
-                LastModificationDate = "12/09/2021"
+                ZipCode = 7600
             });
             try
             {
@@ -87,8 +86,7 @@ namespace Making_Sense
                 Adress = "Gascon 1060",
                 City = "Mar del Plata",
                 State = "Buenos Aires",
-                ZipCode = 7600,
-                LastModificationDate = "15/09/2021"
+                ZipCode = 7600
             };
             try
             {
@@ -100,7 +98,7 @@ namespace Making_Sense
             }
             var chapu = customers.Create(new Customer
             {
-                customerID = 0,
+                customerID = 3,
                 DNI = 34566029,
                 Name = "chapu",
                 Surname = "villaverde",
@@ -108,12 +106,11 @@ namespace Making_Sense
                 Adress = "Friuli 797",
                 City = "Mar del Plata",
                 State = "Buenos Aires",
-                ZipCode = 7600,
-                LastModificationDate = "12/09/2021"
+                ZipCode = 7600
             });
             var hugo = customers.Create(new Customer
             {
-                customerID = 0,
+                customerID = 4,
                 DNI = 40800557,
                 Name = "hugo",
                 Surname = "moreno",
@@ -121,25 +118,43 @@ namespace Making_Sense
                 Adress = "Friuli 797",
                 City = "Mar del Plata",
                 State = "Buenos Aires",
-                ZipCode = 7600,
-                LastModificationDate = "12/09/2021"
+                ZipCode = 7600
             });
-            var Rental = new Rental
+            RentalCRUD rentals = new RentalCRUD();
+            var Rental = rentals.Create(new Rental
             {
+                RentalId = 1,
                 Duration = "7 days",
-                car = Corsa,
+                Car = Corsa,
                 Client = facundo,
                 DateReturn = "15/10/2021"
-            };
-            Console.WriteLine(Rental.ToString());
-            foreach (Car car in Cars.GetAll())
+            });
+            Console.WriteLine(rentals.Get(1).ToString());
+            var RentalHernan = rentals.Create(new Rental
+            {
+                RentalId = 2,
+                Duration = "14 days",
+                Car = Corsa,
+                Client = hernan,
+                DateReturn = "15/12/2021"
+            });
+            rentals.Delete(1);
+            try
+            {
+                Console.WriteLine(rentals.Update(RentalHernan).ToString());
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("No se pudo actualizar la renta correctamente");
+            }
+            /*foreach (Car car in Cars.GetAll())
             {
                 Console.WriteLine(car.ToString());
             }
             foreach (Customer customer in customers.GetAll())
             {
                 Console.WriteLine(customer.ToString());
-            }
+            }*/
         }
     }
 }
