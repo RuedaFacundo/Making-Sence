@@ -1,4 +1,5 @@
-﻿using Making_Sense.Interface.ICarCrud;
+﻿using Making_Sence.Models;
+using Making_Sense.Interface.ICarCrud;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 
-namespace Making_Sence.Models
+namespace Making_Sence.Controllers
 {
     public class CustomerCRUD : ICRUD<Customer>
     {

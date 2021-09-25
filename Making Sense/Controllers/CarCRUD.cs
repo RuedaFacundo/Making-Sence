@@ -1,4 +1,5 @@
 ﻿using Making_Sense.Interface.ICarCrud;
+using Making_Sense.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 
-namespace Making_Sense.Models
+namespace Making_Sense.Controllers
 {
     public class CarCRUD : ICRUD<Car>
     {
