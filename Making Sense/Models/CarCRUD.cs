@@ -37,20 +37,23 @@ namespace Making_Sense.Models
             }
             return carsJsonFromFile;
         }
-        public Car Update (Car car)
+        public Car Update(Car car)
         {
+            Car auxCar = Get(car.CarID);
+            carList.RemoveAt(auxCar.CarID);
             carList.Add(car);
-            Save();       
+            Save();
             return car;
         }
-        public void Delete (int id)
+        public void Delete(int id)
         {
             try
             {
                 carList.Remove(Get(id));
                 Save();
                 Console.WriteLine("El auto fue eliminado correctamente \n");
-            } catch (Exception)
+            }
+            catch (Exception)
             {
                 Console.WriteLine("El auto no se pudo eliminar \n");
             }
@@ -59,18 +62,6 @@ namespace Making_Sense.Models
         {
             List<Car> Cars = JsonConvert.DeserializeObject<List<Car>>(Read());
             return Cars;
-        }
-        public int maxId()
-        {
-            int id;
-            try
-            {
-                id = GetAll().Max(auto => auto.CarID);
-            } catch (Exception)
-            {
-                id = 0;
-            }           
-            return id;
         }
     }
 }
