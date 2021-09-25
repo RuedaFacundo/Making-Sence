@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Making_Sense.Interface.ICarCrud
+namespace Making_Sense.Interface
 {
     public interface ICRUD<T>
     {
