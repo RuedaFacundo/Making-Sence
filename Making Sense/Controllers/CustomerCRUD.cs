@@ -15,9 +15,16 @@ namespace Making_Sence.Controllers
         public List<Customer> customerList = new List<Customer>();
         public Customer Create(Customer customer)
         {
-            customer.LastModificationDate = DateTime.Now;
-            customerList.Add(customer);
-            Save();
+            if (GetDni(customer.DNI) >= 0)
+            {
+                Console.WriteLine("Ya existe un cliente con ese DNI \n");
+            }
+            else
+            {
+                customer.LastModificationDate = DateTime.Now;
+                customerList.Add(customer);
+                Save();
+            }
             return customer;
         }
         private void Save()
@@ -64,6 +71,10 @@ namespace Making_Sence.Controllers
         public IEnumerable<Customer> GetAll()
         {
             return customerList.ToList().OrderBy(customer => customer.DNI);
+        }
+        public int GetDni(int dni)
+        {
+            return customerList.FindIndex(customer => customer.DNI == dni);
         }
     }
 }
