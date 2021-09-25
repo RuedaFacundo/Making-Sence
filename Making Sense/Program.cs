@@ -1,7 +1,10 @@
-﻿using Making_Sence.Models;
+﻿using Making_Sence.Controllers;
+using Making_Sence.Models;
+using Making_Sense.Controllers;
+using Making_Sense.Models;
 using System;
 
-namespace Making_Sense.Models
+namespace Making_Sense
 {
     class Program
     {
