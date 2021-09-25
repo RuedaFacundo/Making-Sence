@@ -39,27 +39,38 @@ namespace Making_Sense.Models
         }
         public Car Update (Car car)
         {
-            Car aux = Get(car.CarID);
-            carList.RemoveAt(aux.CarID);
             carList.Add(car);
-            Save();
+            Save();       
             return car;
         }
         public void Delete (int id)
         {
-            int index = carList.FindIndex(i => i.CarID == id);
-            if (index >= 0)
+            try
             {
-                carList.RemoveAt(index);
+                carList.Remove(Get(id));
                 Save();
-            } else
+                Console.WriteLine("El auto fue eliminado correctamente \n");
+            } catch (Exception)
             {
-                Console.WriteLine("El auto a eliminar no fue encontrado");
-            }          
+                Console.WriteLine("El auto no se pudo eliminar \n");
+            }
         }
         public IEnumerable<Car> GetAll()
         {
-            return carList;
+            List<Car> Cars = JsonConvert.DeserializeObject<List<Car>>(Read());
+            return Cars;
+        }
+        public int maxId()
+        {
+            int id;
+            try
+            {
+                id = GetAll().Max(auto => auto.CarID);
+            } catch (Exception)
+            {
+                id = 0;
+            }           
+            return id;
         }
     }
 }
