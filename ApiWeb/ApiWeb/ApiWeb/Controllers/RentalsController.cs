@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiWeb.Models;
@@ -42,7 +40,6 @@ namespace ApiWeb.Controllers
         }
 
         // PUT: api/Rentals/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutRental(long id, Rental rental)
         {
@@ -73,14 +70,13 @@ namespace ApiWeb.Controllers
         }
 
         // POST: api/Rentals
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Rental>> PostRental(Rental rental)
         {
             _context.Rentals.Add(rental);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetRental", new { id = rental.RentalId }, rental);
+            return CreatedAtAction(nameof(GetRental), new { id = rental.RentalId }, rental);
         }
 
         // DELETE: api/Rentals/5
